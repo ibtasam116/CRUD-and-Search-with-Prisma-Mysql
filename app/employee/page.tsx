@@ -1,5 +1,5 @@
 import Link from "next/link";
-
+import TableData from "@/components/tabledata";
 const Home = () => {
   return (
     <div className="w-screen py-20 flex justify-center flex-col items-center">
@@ -14,9 +14,10 @@ const Home = () => {
             Create
           </Link>
         </div>
+        <TableData />
         {/* <Search />
         <Suspense key={query} fallback={<Spinner />}>
-          <TableData query={query} />
+        <TableData query={query} />
         </Suspense> */}
       </div>
     </div>
