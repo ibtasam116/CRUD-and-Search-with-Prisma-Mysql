@@ -1,3 +1,5 @@
+"use server";
+
 import { z } from "zod"; //npm i zod https://www.npmjs.com/package/zod
 import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
@@ -20,13 +22,15 @@ export const saveEmployee = async (prevSate: any, formData: FormData) => {
   }
 
   try {
-    await prisma.employee.create({
-      data: {
-        name: validatedFields.data.name,
-        email: validatedFields.data.email,
-        phone: validatedFields.data.phone,
-      },
-    });
+    console.log("Success");
+    
+    // await prisma.employee.create({
+    //   data: {
+    //     name: validatedFields.data.name,
+    //     email: validatedFields.data.email,
+    //     phone: validatedFields.data.phone,
+    //   },
+    // });
   } catch (error) {
     return { message: "Failed to create new employee" };
   }
